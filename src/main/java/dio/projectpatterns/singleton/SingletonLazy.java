@@ -1,3 +1,5 @@
+package dio.projectpatterns.singleton;
+
 /**
  * Singleton LAZY
  *

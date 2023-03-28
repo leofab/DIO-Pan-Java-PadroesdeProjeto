@@ -1,5 +1,13 @@
+import dio.projectpatterns.singleton.SingletonEager;
+import dio.projectpatterns.singleton.SingletonLazy;
+import dio.projectpatterns.singleton.SingletonLazyHolder;
+import dio.projectpatterns.strategy.*;
+
 public class Main {
     public static void main(String[] args) {
+
+        // Singleton
+
         SingletonLazy lazy = SingletonLazy.getInstance();
         System.out.println(lazy);
         lazy = SingletonLazy.getInstance();
@@ -14,5 +22,23 @@ public class Main {
         System.out.println(lazyHolder);
         lazyHolder = SingletonLazyHolder.getInstance();
         System.out.println(lazyHolder);
+
+        // Strategy
+
+        Comportamento defensivo = new ComportamentoDefensivo();
+        Comportamento normal = new ComportamentoNormal();
+        Comportamento agressivo = new ComportamentoAgressivo();
+
+        Robo robo = new Robo();
+
+        robo.setComportamento(normal);
+        robo.mover();
+        robo.mover();
+        robo.setComportamento(agressivo);
+        robo.mover();
+        robo.mover();
+        robo.mover();
+        robo.setComportamento(defensivo);
+        robo.mover();
     }
 }
