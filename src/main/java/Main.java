@@ -1,3 +1,4 @@
+import dio.projectpatterns.Facade.Facade;
 import dio.projectpatterns.singleton.SingletonEager;
 import dio.projectpatterns.singleton.SingletonLazy;
 import dio.projectpatterns.singleton.SingletonLazyHolder;
@@ -40,5 +41,10 @@ public class Main {
         robo.mover();
         robo.setComportamento(defensivo);
         robo.mover();
+
+        // Facade
+
+        Facade facade = new Facade();
+        facade.migrarCliente("Léo", "1233321-42");
     }
 }
